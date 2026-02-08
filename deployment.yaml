@@ -3,6 +3,9 @@ kind: Job
 metadata:
     name: seedgpt
     namespace: seedgpt
+    annotations:
+        argocd.argoproj.io/hook: Sync
+        argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 spec:
     backoffLimit: 0
     ttlSecondsAfterFinished: 604800
@@ -15,7 +18,7 @@ spec:
             automountServiceAccountToken: false
             containers:
                 -   name: seedgpt
-                    image: "seedgpt/seedgpt:8c4319e9aaa27c8b0155e361ad639e7cfa3105fc"
+                    image: "seedgpt/seedgpt:bd72ae2802398ea724fc03460bb6f9d12f0e5ac3"
                     imagePullPolicy: Always
                     envFrom:
                         -   secretRef:
