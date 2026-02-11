@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: seedgpt-f13df8c6c21080cec95a1ad656d6065336e61d44
+    name: seedgpt-9beecf4e95cab55e4240da311513f3e666f78f7d
     namespace: seedgpt
 spec:
     backoffLimit: 0
@@ -15,7 +15,7 @@ spec:
             automountServiceAccountToken: false
             containers:
                 -   name: seedgpt
-                    image: "seedgpt/seedgpt:f13df8c6c21080cec95a1ad656d6065336e61d44"
+                    image: "seedgpt/seedgpt:9beecf4e95cab55e4240da311513f3e666f78f7d"
                     imagePullPolicy: Always
                     envFrom:
                         -   secretRef:
